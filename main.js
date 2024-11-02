@@ -5,11 +5,9 @@ document.querySelector('#app').innerHTML = `
 <body>
   <div class="app-container">
     <header class="app-header">
-      <button class="close-button">Close</button>
       <h1 class="app-title">
         SosIHamster <span class="verified-icon">✔</span>
       </h1>
-      <button class="menu-button">...</button>
     </header>
 
     <section class="diamonds-section">
@@ -21,12 +19,13 @@ document.querySelector('#app').innerHTML = `
         <img src="/Humster1.png" alt="Hamster" id="hamster-image" class="hamster-img" />
       </div>
       <p class="counter-message" style="display: none; color: white;">
-        He reached -150$! He is a rich humster now!
+        He reached -150$! 
+        You should try too!
       </p>
     </section>
 
     <img class="fatality" style="display: none; color: white;" src='/fatality.png' />
-
+    <button id="restart" class="restart">Restart the game</button>
     <footer class="app-footer">
       <img src='/footer.png' alt="Footer Image" />
     </footer>
@@ -60,8 +59,8 @@ const hamsterClicked = () => {
   // Toggle the hamster image between sosIhumster1.png and sosIhumster2.png
   const hamsterImage = document.getElementById('hamster-image');
   hamsterImage.src = imageToggle ? '/sosIhumster1.png' : '/sosIhumster2.png';
+  
   imageToggle = !imageToggle; // Switch the toggle state
-
   // Decrease diamond count by 5 and update the UI
   diamondCount -= 5;
   updateDiamondCount();
@@ -87,10 +86,16 @@ const hamsterClicked = () => {
 
   // If diamond count reaches -150, show the fatality screen
   if (diamondCount === -150) {
+    
     const hideHamster = document.querySelector('.diamonds-section');
     const hideFooter = document.querySelector('.app-footer');
     const fatalityElement = document.querySelector('.fatality');
+    const restartButton = document.querySelector('#restart');
+    restartButton.addEventListener('click', ()=>{
+      location.reload(); // Reloads the current page
+    });
 
+    restartButton.style.display = 'block'; // Show the restart button
     hideFooter.style.display = 'none';
     hideHamster.style.display = 'none';
     fatalityElement.style.display = 'block'; // Show the fatality screen

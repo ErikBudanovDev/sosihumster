@@ -4,7 +4,7 @@ body {
   font-family: "Arial", sans-serif;
   background-color: #1f1f1f;
   color: white;
-  max-height: 100vh;
+  min-height: 100vh;
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -22,7 +22,7 @@ body {
 
 .app-header {
   display: flex;
-  justify-content: space-between;
+  justify-content: center ;
   padding: 10px 15px;
   background-color: #121212;
   align-items: center;
@@ -40,6 +40,7 @@ body {
   font-size: 18px;
   display: flex;
   align-items: center;
+  text-align: center;
 }
 
 .verified-icon {
@@ -48,15 +49,15 @@ body {
 }
 
 .diamonds-section {
-  flex-grow: 1;
+  /* flex-grow: 1; */
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
 .diamond-count {
-  font-size: 20px;
-  margin-bottom: 20px;
+  /* font-size: 20px; */
+  /* margin-bottom: 20px; */
 }
 
 .hamster-avatar {
@@ -137,19 +138,21 @@ body {
 }
 
 #hamster-image {
-  width: 500px;  /* Adjust width to your preference */
-  height: 500px; /* Adjust height to match */
-  object-fit: cover;  /* Ensures the image fills the area without distortion */
+  width: 80%;  /* Adjust width to your preference */
+  /* height: 100%; Adjust height to match */
+  /* object-fit: cover;  Ensures the image fills the area without distortion */
   border-radius: 50%;  /* Optional: Makes the image circular */
-  min-width: 500px;
-  min-height: 500px;
+  /* min-width: 500px; */
+  /* min-height: 500px; */
 }
 
 .hamster-avatar {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 20px 0;
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: center; */
+  position: absolute;
+  top: 0%;
+  /* margin: 20px 0; */
 }
 
 .fatality {
@@ -161,4 +164,11 @@ body {
   max-width: 80%;  /* Ensure the image scales properly on small screens */
   max-height: 80%;  /* Keep the aspect ratio intact */
   object-fit: contain;  /* Ensures the image fits nicely within its container */
+}
+
+.restart{
+  display: none;
+  font-size: 1.2rem;
+    padding: 8px 12px;
+    margin-bottom: 20px;
 }
